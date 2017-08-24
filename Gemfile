@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Shine gems
 gem 'webpacker'
+gem 'foreman'
 
 
 # AP specific gems
