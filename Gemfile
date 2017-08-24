@@ -31,6 +31,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Shine gems
+gem 'webpacker'
+
+
+# AP specific gems
 gem 'slim-rails'
 
 group :development, :test do
