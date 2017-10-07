@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'webpacker'
 gem 'foreman'
 gem 'devise'
-
+gem 'faker', group: :development
 
 # AP specific gems
 gem 'slim-rails'

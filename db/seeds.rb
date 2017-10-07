@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+350_000.times do |i|
+  uname = "#{Faker::Internet::user_name}#{i}"
+  Customer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: uname,
+    email: "#{uname}@#{Faker::Internet.domain_name}"
+  )
+  print '.' if i % 1000 == 0
+end
+puts
