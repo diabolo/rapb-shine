@@ -11,6 +11,8 @@ section.search-form
         = submit_tag 'Find Customers',
           class: 'btn btn-primary btn-large'
 
+= render partial: "pager", locals: { keywords: @keywords, page: @page } if @customers.present?
+
 section.search-results
   header
     h1.h3 Results
