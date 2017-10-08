@@ -2,11 +2,9 @@ class CustomersController < ApplicationController
   def index
     if params[:keywords].present?
       @keywords = params[:keywords]
-      customer_search_term = ::CustomerSearch.new(@keywords)
-      @customers = Customer.where(
-        customer_search_term.where_clause,
-        customer_search_term.where_args).
-        order(customer_search_term.order)
+      customer_search = ::CustomerSearch.new(@keywords)
+      byebug
+      @customers = customer_search.search
     else
       @customers = []
     end

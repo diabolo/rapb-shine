@@ -13,7 +13,20 @@ class CustomerSearch
     end
   end
 
+  def search
+    relation
+  end
+
+  def query
+    relation.to_sql
+  end
+
   private
+
+  def relation
+    @relation ||=
+      Customer.where(where_clause, where_args).order(order)
+  end
 
   def name_search
     @where_clause << case_insensitive(:first_name)
