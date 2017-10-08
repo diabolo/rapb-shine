@@ -3,7 +3,6 @@ class CustomersController < ApplicationController
     if params[:keywords].present?
       @keywords = params[:keywords]
       customer_search = ::CustomerSearch.new(@keywords)
-      byebug
       @customers = customer_search.search
     else
       @customers = []
